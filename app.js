@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const taskRouter = require("./routes/taskRouter");
 const port = 4000;
-
+app.use(cors())
 app.use(express.json());
 app.use("/tasks", taskRouter);
 

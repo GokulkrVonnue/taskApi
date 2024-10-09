@@ -7,8 +7,10 @@ export const getAllTask = (req, res) => {
 
 export const getSingleTask = (req, res) => {
   const { taskId } = req.params;
+  console.log(taskId)
   const singleTask = tasks.filter((task) => task.id === Number(taskId));
-  if (singleTask) {
+  console.log(tasks)
+  if (!singleTask) {
     return res.status(404).json({ success: false, message: "Item not found" });
   }
   console.log(singleTask);
